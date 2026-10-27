@@ -26,7 +26,8 @@ class Database:
                     return {
                         "peer_id": peer_id, "user_id": user_id, "role": 0, 
                         "is_super": is_super, "warns": 0, "is_banned": 0, 
-                        "nickname": None, "experience": 0, "reputation": 0
+                        "nickname": None, "experience": 0, "reputation": 0,
+                        "exam_score": 0
                     }
                 if user_id in super_ids and not res["is_super"]:
                     await cur.execute("UPDATE users SET is_super = 1 WHERE user_id = %s", (user_id,))

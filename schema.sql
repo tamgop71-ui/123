@@ -1,4 +1,4 @@
--- База данных для бота модерации бесед VK (8 уровней доступа + Супер-Админ)
+-- База данных для бота модерации бесед VK (8 уровней доступа + Супер-Админ + Тесты/Экзамены)
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `experience` INT DEFAULT 0,
   `reputation` INT DEFAULT 0,
   `daily_bonus_last` TIMESTAMP NULL DEFAULT NULL,
+  `exam_score` INT DEFAULT 0,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `user_chat_unique` (`peer_id`, `user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
